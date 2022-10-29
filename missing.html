@@ -7,15 +7,27 @@
     <title>missing file example</title>
 </head>
 <body>
-    <h1>JavaScript operators</h1>
-    <h2>The ?? Operator</h2>
-    <p id="demo"></p>
-
-    <script>
-        let name = null;
-        let text = "missing";
-        let result = name ?? text;
-        document.getElementById("demo").innerHTML="The name is missing" + result;
-    </script>
+<h1>Javascript String methods</h1>
+<p>Please input a number between 5 and 10.</p>
+<input id="trial" type="text">
+<button onclick="myFunction()">Test input</button>
+<p id="demo"></p>
+<script>
+    function myFunction() {
+        const message = document.getElementById("demo").innerHTML;
+        message.innerHTML= "";
+        let  x = document.getElementById("trial").value;
+        try{
+            if (x == "") throw "Empty";
+            if(isNaN(x)) throw "not a number";
+            x = Number(x);
+            if(x < 5) throw "Too low";
+            if (x > 10) throw "Too high";
+        }
+        catch(err){
+            message.innerHTML = "Input is " + err;
+        }
+    }
+</script>
 </body>
 </html>
